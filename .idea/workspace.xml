@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="" />
+    <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_admin_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/dto/response/response_member_dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/entity/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/entity/member.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/service/member_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/user/entity/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3FtSMGRLkdZssEaP5UjfGRj5pxd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -18,7 +36,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/user/Desktop/docu/practicedto"
   }
 }]]></component>
   <component name="SharedIndexes">

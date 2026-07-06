@@ -7,5 +7,5 @@ from app.domain.member.entity.member import Member
 class MemberInterface:
 
     @abstractmethod
-    def save_member(self, dto : CreateMemberDto) -> Member:
+    def save_member(self, member : Member) -> Member:
         pass

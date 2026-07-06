@@ -18,13 +18,16 @@ class FileMemberRepository(MemberInterface):
         if not os.path.exists(self.file_path):
             self._save_data([])
 
-    def save_member(self, dto : CreateMemberDto) -> Member:
+    def save_member(self, member: Member) -> Member:
 
-        member = dto.to_member()
         all_member = self._read_data()
 
         if member.member_id is None:
             member.member_id = len(all_member) + 1
+
+        member_dict = member.__dict__
+
+        all_member.append(member_dict)
 
         self._save_data(all_member)
 

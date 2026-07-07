@@ -14,11 +14,12 @@ class SignInApp:
 
         # 윈도우창 레이아웃
         self.window.title("최명진 법무사 사무소 - 멤버가입 시스템")
-        self.window.geometry("400x350")
+        self.window.geometry("600x350")
         self.window.resizable(False, False)
 
-        self. _create_widgets()
-
+        self._create_widgets()
+        self.window.bind("<Return>", self._on_click_register)
+        self.name_entry.focus_force()
     def _create_widgets(self):
 
         # 프레임 구분
@@ -41,11 +42,22 @@ class SignInApp:
 
         # 3. 주민번호 입력
         tk.Label(form_frame, text="주민번호: ", font = ("Arial", 10)).grid(row = 2, column = 0, sticky = "e", pady = 5)
-        self.personal_number_front_entry = tk.Entry(form_frame, width = 25)
+
+        self.front_var = tk.StringVar()
+        self.front_var.trace_add("write", self._check_front_length)
+
+        self.personal_number_front_entry = tk.Entry(form_frame, width = 25, textvariable = self.front_var)
         self.personal_number_front_entry.grid(row = 2, column = 1, pady = 5, padx = 10)
+
         tk.Label(form_frame, text = "-", font = ("Arial", 10)).grid(row = 2, column = 2, sticky = "e", pady = 5)
-        self.personal_number_back_entry = tk.Entry(form_frame, width=25)
+
+        self.back_var = tk.StringVar()
+        self.back_var.trace_add("write", self._check_back_length)
+
+        self.personal_number_back_entry = tk.Entry(form_frame, width=25,textvariable = self.back_var)
         self.personal_number_back_entry.grid(row=2, column=3, pady=5, padx=10)
+
+        self.personal_number_back_entry.bind("<BackSpace>", self._check_back_empty)
 
         # 4. 전화번호 입력
         tk.Label(form_frame, text = "전화번호: ", font = ("Arial", 10)).grid(row = 3, column = 0, sticky = "e", pady = 5)
@@ -76,7 +88,31 @@ class SignInApp:
         )
 
         cancel_btn.pack(pady = 20, side = "right", expand = True)
-    def _on_click_register(self):
+
+    def _check_front_length(self, *args):
+        current_text = self.front_var.get()
+
+        # 6글자 이상이 되는 순간!
+        if len(current_text) >= 6:
+            # 1. 6글자까지만 자르기
+            self.front_var.set(current_text[:6])
+
+            self._move_focus_to_back()
+
+    def _check_back_empty(self, event):
+        if len(self.personal_number_back_entry.get()) == 0:
+            self.personal_number_front_entry.focus_set()
+            self.personal_number_front_entry.icursor(tk.END)
+
+    def _check_back_length(self, *args):
+        current_text = self.back_var.get()
+        if len(current_text) > 7:
+            self.back_var.set(current_text[:7])
+
+    def _move_focus_to_back(self):
+        self.personal_number_back_entry.focus_set()
+
+    def _on_click_register(self, event=None):
 
         # 버튼 클릭 하면 controller로 데이터를 던지는 함수
         name = self.name_entry.get().strip()
@@ -85,7 +121,7 @@ class SignInApp:
         phone_number = self.phone_number_entry.get().strip()
 
         if not (name and password and personal_number):
-            messagebox.showwarning("필수 항목을 입려해 주세요.")
+            messagebox.showwarning("경고","필수 항목을 입려해 주세요.")
             return
 
         try:
@@ -104,15 +140,17 @@ class SignInApp:
             messagebox.showinfo("성공", success_msg)
 
             self._clear_entries()
+            self.name_entry.focus_set()
 
         except ValueError as e:
             messagebox.showerror("가입실패", str(e))
+            self.name_entry.focus_force()
 
     def _clear_entries(self):
         self.name_entry.delete(0, tk.END)
         self.password_entry.delete(0, tk.END)
-        self.personal_number_front_entry.delete(0, tk.END)
-        self.personal_number_back_entry.delete(0, tk.END)
+        self.front_var.set("")
+        self.back_var.set("")
         self.phone_number_entry.delete(0, tk.END)
 
     def _on_click_cancel(self):

@@ -7,9 +7,10 @@
     <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/create_admin_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_admin_dto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/member/entity/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/entity/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/service/member_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/service/member_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/member.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -22,11 +22,20 @@ class CreateMemberDto:
 
         if not re.match(r'^([0-9]*)$', phone_number):
             raise ValueError("DTO 에러: 전화번호는 숫자만 입력가능합니다.")
+
+        phone_number = phone_number.strip()
+        phone_number = phone_number.replace("-", "")
+
+        if phone_number == "":
+            phone_number = "031-903-7360"
+
+
         self.name = name
         self.password = password
         self.personal_number = personal_number
         self.phone_number = phone_number
         self.member_id = member_id
+
 
 
     def to_member(self) -> Member:

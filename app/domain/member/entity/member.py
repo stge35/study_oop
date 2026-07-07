@@ -6,7 +6,7 @@ class Member:
                  name : str,
                  password : str,
                  personal_number : str,
-                 phone_number : str = "010-903-7360",
+                 phone_number : str,
                  member_id: Optional[int] = None):
         self.name = name
         self.password = password
@@ -23,7 +23,7 @@ class Member:
             name : str,
             password : str,
             personal_number : str,
-            phone_number : str = "010-903-7360",
+            phone_number : str,
             member_id: int = None,
             ) -> "Member":
 

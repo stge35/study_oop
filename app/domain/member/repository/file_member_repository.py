@@ -1,6 +1,6 @@
 import json
 import os.path
-from typing import List
+from typing import List, Optional
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
 from app.domain.member.entity.member import Member
 
@@ -34,6 +34,16 @@ class FileMemberRepository(MemberInterface):
         print("저장 성공")
 
         return member
+
+    def exists_by_name(self, name: str) -> bool:
+        all_member = self._read_data()
+
+        for data in all_member:
+            if data.get("name") == name:
+                return True
+
+        return False
+
 
     def _save_data(self, data: List[dict]):
 

@@ -13,6 +13,9 @@ class MemberService:
 
         member = dto.to_member()
 
+        if self.repository.exists_by_name(member.name):
+            raise ValueError("이미 가입된 멤버입니다.")
+
         saved_member = self.repository.save_member(member)
 
         return ResponseMember.from_member(saved_member)

@@ -24,6 +24,8 @@ class Admin(Member):
     @classmethod
     def to_admin(cls, password: str, member_id : Optional[int] = None) -> "Admin":
 
+
+
         return cls.to_member(
             name = cls.name,
             password = password,

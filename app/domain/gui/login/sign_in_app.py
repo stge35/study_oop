@@ -41,8 +41,11 @@ class SignInApp:
 
         # 3. 주민번호 입력
         tk.Label(form_frame, text="주민번호: ", font = ("Arial", 10)).grid(row = 2, column = 0, sticky = "e", pady = 5)
-        self.personal_number_entry = tk.Entry(form_frame, width = 25)
-        self.personal_number_entry.grid(row = 2, column = 1, pady = 5, padx = 10)
+        self.personal_number_front_entry = tk.Entry(form_frame, width = 25)
+        self.personal_number_front_entry.grid(row = 2, column = 1, pady = 5, padx = 10)
+        tk.Label(form_frame, text = "-", font = ("Arial", 10)).grid(row = 2, column = 2, sticky = "e", pady = 5)
+        self.personal_number_back_entry = tk.Entry(form_frame, width=25)
+        self.personal_number_back_entry.grid(row=2, column=3, pady=5, padx=10)
 
         # 4. 전화번호 입력
         tk.Label(form_frame, text = "전화번호: ", font = ("Arial", 10)).grid(row = 3, column = 0, sticky = "e", pady = 5)
@@ -78,7 +81,7 @@ class SignInApp:
         # 버튼 클릭 하면 controller로 데이터를 던지는 함수
         name = self.name_entry.get().strip()
         password = self.password_entry.get().strip()
-        personal_number = self.personal_number_entry.get().strip()
+        personal_number = self.personal_number_front_entry.get().strip()+ self.personal_number_back_entry.get().strip()
         phone_number = self.phone_number_entry.get().strip()
 
         if not (name and password and personal_number):
@@ -108,7 +111,8 @@ class SignInApp:
     def _clear_entries(self):
         self.name_entry.delete(0, tk.END)
         self.password_entry.delete(0, tk.END)
-        self.personal_number_entry.delete(0, tk.END)
+        self.personal_number_front_entry.delete(0, tk.END)
+        self.personal_number_back_entry.delete(0, tk.END)
         self.phone_number_entry.delete(0, tk.END)
 
     def _on_click_cancel(self):

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/app/domain/gui/login/main_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/gui/login/main_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/share/API/land_api/dto/request/land_request_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/API/land_api/dto/request/land_request_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/share/API/land_api/dto/response/land_response_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/API/land_api/dto/response/land_response_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/share/API/land_api/entity/land.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/API/land_api/entity/land.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,22 +27,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.create_member_dto.executor": "Run",
-    "Python.data_encryptor.executor": "Run",
-    "Python.file_member_repository.executor": "Run",
-    "Python.log_in.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.member_service.executor": "Run",
-    "Python.response_member_dto.executor": "Run",
-    "Python.sign_in_app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/user/Desktop/docu/practicedto",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.create_member_dto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_encryptor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.file_member_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.log_in.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.member_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.response_member_dto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sign_in_app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/docu/practicedto&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\docu\projectuser\app\share\API\address_api\dto" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

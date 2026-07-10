@@ -1,0 +1,2 @@
+class LandController:
+    pass

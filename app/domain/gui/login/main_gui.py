@@ -9,3 +9,10 @@ class MainGui:
         self.window.title("최명진 법무사 사무소")
         self.window.geometry("800x1200")
         self.window.resizable(False, False)
+
+
+    # header frame
+
+    # body frame
+
+    # body frame

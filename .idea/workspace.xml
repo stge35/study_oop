@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/app/domain/gui/login/log_in.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/gui/login/main_gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/share/utils/data_encryptor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/share/utils/initialize_keyring.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/share/utils/password_encoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/create_admin_dto.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/entity/admin.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/service/member_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/service/member_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/member.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,14 +41,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.create_member_dto.executor": "Run",
+    "Python.data_encryptor.executor": "Run",
     "Python.file_member_repository.executor": "Run",
+    "Python.log_in.executor": "Run",
     "Python.main.executor": "Run",
     "Python.member_service.executor": "Run",
     "Python.response_member_dto.executor": "Run",
     "Python.sign_in_app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/user/Desktop/docu/practicedto"
+    "last_opened_file_path": "C:/Users/user/Desktop/docu/practicedto",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="SharedIndexes">

@@ -1,7 +1,4 @@
 from abc import ABCMeta, abstractmethod
-from typing import Optional
-
-from app.domain.member.dto.request.create_member_dto import CreateMemberDto
 from app.domain.member.entity.member import Member
 
 
@@ -9,6 +6,17 @@ class MemberInterface:
 
     @abstractmethod
     def save_member(self, member : Member) -> Member:
+        pass
+
+    @abstractmethod
+    def find_all_member(self) -> list[Member]:
+        pass
+
+    @abstractmethod
+    def find_by_name(self, name: str) -> list[Member]:
+        pass
+
+    def find_by_id(self, member_id: str) -> Member | None:
         pass
 
     @abstractmethod

@@ -1,6 +1,8 @@
 import re
 from typing import Optional
 from app.domain.member.entity.member import Member
+from app.share.utils.data_encryptor import DataEncryptor
+from app.share.utils.password_encoder import PasswordEncoder
 
 
 class CreateMemberDto:
@@ -40,10 +42,13 @@ class CreateMemberDto:
 
     def to_member(self) -> Member:
 
+        encrypted_password = PasswordEncoder.hash_password(self.password)
+        encrypted_p_num = DataEncryptor.encrypt(self.personal_number)
+
         return Member.to_member(
             name = self.name,
-            password = self.password,
-            personal_number = self.personal_number,
+            password = encrypted_password,
+            personal_number = encrypted_p_num,
             phone_number = self.phone_number,
             member_id = self.member_id
         )

@@ -18,3 +18,14 @@ class MemberController:
         except ValueError as e:
             raise ValueError(f"fail : {e}")
 
+    def login_member(self, name: str, password: str) -> bool:
+
+        member = self.member_service.login(name)
+
+        if not member:
+            raise ValueError("사용자가 존재하지 않습니다.")
+
+        from app.share.utils.password_encoder import PasswordEncoder
+        return PasswordEncoder.check_password(password, member.password)
+
+

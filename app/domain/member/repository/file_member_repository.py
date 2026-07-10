@@ -5,6 +5,8 @@ from app.domain.member.dto.request.create_member_dto import CreateMemberDto
 from app.domain.member.entity.member import Member
 
 from app.domain.member.repository.member_interface import MemberInterface
+from app.share.utils.data_encryptor import DataEncryptor
+
 
 # BASE_SAVE_DIR = os.path.
 
@@ -34,6 +36,62 @@ class FileMemberRepository(MemberInterface):
         print("저장 성공")
 
         return member
+
+    def find_all_member(self) -> list[Member]:
+
+        raw_data_list = self._read_data()
+        members = []
+
+        for data in raw_data_list:
+            decrypted_p_num = DataEncryptor.decrypt(data['personal_number'])
+
+            member = Member(
+                member_id = data['member_id'],
+                name=data['name'],
+                password=data['password'],  # 비밀번호는 단방향이라 복호화 불가 (그대로 둠)
+                personal_number=decrypted_p_num,  # ⭕ 복원된 평문 주입
+                phone_number=data['phone_number']
+            )
+            members.append(member)
+
+        return members
+
+    def find_by_name(self, name: str) -> list[Member]:
+        """[1단계] 사용자가 화면에서 이름으로 검색할 때 쓰는 함수"""
+        all_members = self._read_data()
+        results = []
+
+        for data in all_members:
+            if data['name'] == name:
+                decrypted_p_num = DataEncryptor.decrypt(data['personal_number'])
+
+                member_entity = Member.to_member(
+                    member_id = data['member_id'],
+                    name = data['name'],
+                    password = data['password'],
+                    personal_number = decrypted_p_num,
+                    phone_number = data['phone_number']
+                )
+                results.append(member_entity)
+
+        return results
+
+    def find_by_id(self, member_id: str) -> Member | None:
+
+        all_members = self._read_data()
+        for data in all_members:
+            if data['member_id'] == member_id:
+
+                decrypted_p_num = DataEncryptor.decrypt(data['personal_number'])
+
+                return Member.to_member(
+                    member_id = data['member_id'],
+                    name = data['name'],
+                    password = data['password'],
+                    personal_number = decrypted_p_num,
+                    phone_number = data['phone_number']
+                )
+        return None
 
     def exists_by_name(self, name: str) -> bool:
         all_member = self._read_data()

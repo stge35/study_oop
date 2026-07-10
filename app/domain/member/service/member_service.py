@@ -1,5 +1,6 @@
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
 from app.domain.member.dto.response.response_member_dto import ResponseMember
+from app.domain.member.entity.member import Member
 from app.domain.member.repository.member_interface import MemberInterface
 
 
@@ -19,4 +20,18 @@ class MemberService:
         saved_member = self.repository.save_member(member)
 
         return ResponseMember.from_member(saved_member)
-        
+
+    def login(self, name: str) -> Member | None:
+
+        members = self.repository.find_by_name(name)
+
+        if not members:
+            return None
+
+        return members[0]
+
+    def has_any_member(self) -> bool:
+
+        all_members = self.repository.find_all_member()
+
+        return len(all_members) > 0

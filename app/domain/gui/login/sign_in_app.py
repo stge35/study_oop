@@ -139,8 +139,7 @@ class SignInApp:
             )
             messagebox.showinfo("성공", success_msg)
 
-            self._clear_entries()
-            self.name_entry.focus_set()
+            self.window.destroy()
 
         except ValueError as e:
             messagebox.showerror("가입실패", str(e))
@@ -154,4 +153,4 @@ class SignInApp:
         self.phone_number_entry.delete(0, tk.END)
 
     def _on_click_cancel(self):
-        pass
+        self.window.destroy()

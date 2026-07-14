@@ -24,7 +24,7 @@ class Member:
             password : str,
             personal_number : str,
             phone_number : str,
-            member_id: int = None,
+            member_id: int = None
             ) -> "Member":
 
         # 하이픈이 있으면 제거를 하고 저장

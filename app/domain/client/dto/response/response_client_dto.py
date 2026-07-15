@@ -10,6 +10,7 @@ class ResponseClientDto:
     personal_number: str
     address: str
     phone_number: str
+    client_id: int
 
     @classmethod
     def from_client(cls, entity: Client) -> "ResponseClientDto":
@@ -18,5 +19,6 @@ class ResponseClientDto:
             name = entity.name,
             personal_number = entity.personal_number,
             address = entity.address,
-            phone_number = entity.phone_number
+            phone_number = entity.phone_number,
+            client_id = entity.client_id
         )

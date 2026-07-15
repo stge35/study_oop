@@ -70,7 +70,7 @@ class FileClientRepository(ClientInterface):
 
         return results
 
-    def find_by_id(self, client_id: str) -> Client | None:
+    def find_by_id(self, client_id: int) -> Client | None:
 
         all_clients = self._read_data()
         for data in all_clients:
@@ -86,6 +86,17 @@ class FileClientRepository(ClientInterface):
                     phone_number = data['phone_number']
                 )
         return None
+
+    def remove_by_client_id(self, client_id: int) -> bool:
+
+        all_clients = self._read_data()
+        for data in all_clients:
+            if data['client_id'] == client_id:
+                all_clients.remove(data)
+                self._save_data(all_clients)
+                return True
+        return False
+
 
     def exists_by_personal_number(self, personal_number: str) -> bool:
 

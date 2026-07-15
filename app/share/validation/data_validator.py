@@ -26,3 +26,4 @@ class DataValidator:
         if not re.match(r'^([0-9]*)$', value):
             raise ValueError(f"{context} 에러: 전화번호는 숫자만 입력가능합니다.")
         return value
+

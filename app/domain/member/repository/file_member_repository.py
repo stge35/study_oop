@@ -74,7 +74,7 @@ class FileMemberRepository(MemberInterface):
 
         return results
 
-    def find_by_id(self, member_id: str) -> Member | None:
+    def find_by_id(self, member_id: int) -> Member | None:
 
         all_members = self._read_data()
         for data in all_members:

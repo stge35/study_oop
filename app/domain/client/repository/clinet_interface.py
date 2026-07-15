@@ -18,7 +18,7 @@ class ClientInterface:
         pass
 
     @abstractmethod
-    def find_by_id(self, client_id: str) -> Client | None:
+    def find_by_id(self, client_id: int) -> Client | None:
         pass
 
     @abstractmethod
@@ -26,5 +26,5 @@ class ClientInterface:
         pass
 
     @abstractmethod
-    def remove_by_client_id(self, client_id: str) -> bool:
+    def remove_by_client_id(self, client_id: int) -> bool:
         pass

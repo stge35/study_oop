@@ -17,7 +17,7 @@ class MemberInterface:
         pass
 
     @abstractmethod
-    def find_by_id(self, member_id: str) -> Member | None:
+    def find_by_id(self, member_id: int) -> Member | None:
         pass
 
     @abstractmethod

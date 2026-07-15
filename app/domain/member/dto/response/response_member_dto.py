@@ -4,14 +4,14 @@ from app.domain.member.entity.member import Member
 
 
 @dataclass
-class ResponseMember:
+class ResponseMemberDto:
 
     name: str
     personal_number: str
     phone_number: str
 
     @classmethod
-    def from_member(cls, entity: Member) -> "ResponseMember":
+    def from_member(cls, entity: Member) -> "ResponseMemberDto":
 
         return cls(
             name = entity.name,

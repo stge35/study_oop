@@ -1,5 +1,5 @@
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
-from app.domain.member.dto.response.response_member_dto import ResponseMember
+from app.domain.member.dto.response.response_member_dto import ResponseMemberDto
 from app.domain.member.entity.member import Member
 from app.domain.member.repository.member_interface import MemberInterface
 
@@ -10,7 +10,7 @@ class MemberService:
 
         self.repository =repository
 
-    def save(self, dto: CreateMemberDto)-> ResponseMember:
+    def save(self, dto: CreateMemberDto)-> ResponseMemberDto:
 
         member = dto.to_member()
 
@@ -19,7 +19,7 @@ class MemberService:
 
         saved_member = self.repository.save_member(member)
 
-        return ResponseMember.from_member(saved_member)
+        return ResponseMemberDto.from_member(saved_member)
 
     def login(self, name: str) -> Member | None:
 

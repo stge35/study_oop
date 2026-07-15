@@ -16,6 +16,7 @@ class MemberInterface:
     def find_by_name(self, name: str) -> list[Member]:
         pass
 
+    @abstractmethod
     def find_by_id(self, member_id: str) -> Member | None:
         pass
 

@@ -1,9 +1,7 @@
 import json
 import os.path
 from typing import List, Optional
-from app.domain.member.dto.request.create_member_dto import CreateMemberDto
 from app.domain.member.entity.member import Member
-
 from app.domain.member.repository.member_interface import MemberInterface
 from app.share.utils.data_encryptor import DataEncryptor
 
@@ -47,10 +45,10 @@ class FileMemberRepository(MemberInterface):
 
             member = Member(
                 member_id = data['member_id'],
-                name=data['name'],
-                password=data['password'],  # 비밀번호는 단방향이라 복호화 불가 (그대로 둠)
-                personal_number=decrypted_p_num,  # ⭕ 복원된 평문 주입
-                phone_number=data['phone_number']
+                name = data['name'],
+                password = data['password'],  # 비밀번호는 단방향이라 복호화 불가 (그대로 둠)
+                personal_number = decrypted_p_num,  # ⭕ 복원된 평문 주입
+                phone_number = data['phone_number']
             )
             members.append(member)
 
@@ -94,9 +92,9 @@ class FileMemberRepository(MemberInterface):
         return None
 
     def exists_by_name(self, name: str) -> bool:
-        all_member = self._read_data()
+        all_members = self._read_data()
 
-        for data in all_member:
+        for data in all_members:
             if data.get("name") == name:
                 return True
 
@@ -106,7 +104,7 @@ class FileMemberRepository(MemberInterface):
     def _save_data(self, data: List[dict]):
 
         with open(self.file_path, "w", encoding = "utf-8") as f :
-            return json.dump(data, f, ensure_ascii=False, indent=4)
+            return json.dump(data, f, ensure_ascii = False, indent = 4)
 
     def _read_data(self) -> List[dict]:
 

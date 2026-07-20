@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/app/share/validation/business_exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/share/validation/custom_exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/domain/member/dto/request/updata_member_dto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/client/controller/client_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/client/controller/client_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/client/dto/response/response_client_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/client/dto/response/response_client_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/client/repository/clinet_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/client/repository/clinet_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/client/repository/file_client_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/client/repository/file_client_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/client/service/client_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/client/service/client_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/gui/login/sign_in_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/request/create_member_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/dto/response/response_member_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/response/response_member_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/entity/member.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/entity/member.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/member_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/member.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/member.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/share/validation/data_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/validation/data_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/to-do" beforeDir="false" afterPath="$PROJECT_DIR$/app/to-do" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

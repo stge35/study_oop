@@ -9,6 +9,10 @@ class MemberInterface:
         pass
 
     @abstractmethod
+    def update_member(self, member : Member) -> Member:
+        pass
+
+    @abstractmethod
     def find_all_member(self) -> list[Member]:
         pass
 

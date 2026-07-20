@@ -35,6 +35,15 @@ class FileMemberRepository(MemberInterface):
 
         return member
 
+    def update_member(self, member: Member) -> None:
+
+        all_members = self._read_data()
+
+        for data in all_members:
+
+
+
+
     def find_all_member(self) -> list[Member]:
 
         raw_data_list = self._read_data()
@@ -48,6 +57,7 @@ class FileMemberRepository(MemberInterface):
                 name = data['name'],
                 password = data['password'],  # 비밀번호는 단방향이라 복호화 불가 (그대로 둠)
                 personal_number = decrypted_p_num,  # ⭕ 복원된 평문 주입
+                address = data['address'],
                 phone_number = data['phone_number']
             )
             members.append(member)
@@ -68,6 +78,7 @@ class FileMemberRepository(MemberInterface):
                     name = data['name'],
                     password = data['password'],
                     personal_number = decrypted_p_num,
+                    address = data['address'],
                     phone_number = data['phone_number']
                 )
                 results.append(member_entity)
@@ -87,6 +98,7 @@ class FileMemberRepository(MemberInterface):
                     name = data['name'],
                     password = data['password'],
                     personal_number = decrypted_p_num,
+                    address = data['address'],
                     phone_number = data['phone_number']
                 )
         return None

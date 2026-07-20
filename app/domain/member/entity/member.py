@@ -7,16 +7,19 @@ class Member:
                  password : str,
                  personal_number : str,
                  phone_number : str,
-                 member_id: Optional[int] = None):
+                 address : [str] = None,
+                 member_id: Optional[int] = None
+                 ):
         self.name = name
         self.password = password
         self.personal_number = personal_number
         self.phone_number = phone_number
+        self.address = address
         self.member_id = member_id
         self.role = 2
 
     def __repr__(self) -> str:
-        return f"Member(name = '{self.name}', member_id = '{self.member_id}"
+        return f"Member(name = {self.name}, address = {self.address}, member_id = {self.member_id}"
 
     @classmethod
     def to_member(cls,
@@ -24,7 +27,8 @@ class Member:
             password : str,
             personal_number : str,
             phone_number : str,
-            member_id: int = None
+            address : str = None,
+            member_id : int = None
             ) -> "Member":
 
         # 하이픈이 있으면 제거를 하고 저장
@@ -32,8 +36,9 @@ class Member:
 
         return cls(
             name = name,
-            password= password,
-            personal_number=cleaned_personal_number,
-            phone_number=phone_number,
+            password = password,
+            personal_number = cleaned_personal_number,
+            phone_number = phone_number,
+            address = address,
             member_id = member_id,
         )

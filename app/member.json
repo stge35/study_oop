@@ -1,9 +1,10 @@
 [
     {
         "name": "이동근",
-        "password": "$2b$12$zsFW4TVOaFk5hoRTg3sdleIQux5pcu6pUE5tDTB4Eao28Bbdox0XC",
-        "personal_number": "tGKDSvAwg2jblKbaJflsksJ1n9iz6sxP+JK5gJWwiiw=",
+        "password": "$2b$12$Eh9XWwoE9uiKArr88qa3XeRfss9mzupMkGkM516HVWa06YoXOxl0.",
+        "personal_number": "TvZ//h2PLESTC89B5LB+oLfp4JfRsnGeM3RxkdDBRxA=",
         "phone_number": "031-903-7360",
+        "address": "경기도 고양시 일산동구 장백로 194, 601호",
         "member_id": 1,
         "role": 2
     }

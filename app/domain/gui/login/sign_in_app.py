@@ -45,7 +45,6 @@ class SignInApp:
 
         self.front_var = tk.StringVar()
         self.front_var.trace_add("write", self._check_front_length)
-
         self.personal_number_front_entry = tk.Entry(form_frame, width = 25, textvariable = self.front_var)
         self.personal_number_front_entry.grid(row = 2, column = 1, pady = 5, padx = 10)
 
@@ -53,17 +52,20 @@ class SignInApp:
 
         self.back_var = tk.StringVar()
         self.back_var.trace_add("write", self._check_back_length)
-
         self.personal_number_back_entry = tk.Entry(form_frame, width=25,textvariable = self.back_var)
         self.personal_number_back_entry.grid(row=2, column=3, pady=5, padx=10)
 
         self.personal_number_back_entry.bind("<BackSpace>", self._check_back_empty)
 
-        # 4. 전화번호 입력
-        tk.Label(form_frame, text = "전화번호: ", font = ("Arial", 10)).grid(row = 3, column = 0, sticky = "e", pady = 5)
+        # 4. 주소 입력
+        tk.Label(form_frame, text = "주소: ", font = ("Arial", 10)).grid(row = 3, column = 0, sticky = "e", pady = 5)
+        self.address_entry = tk.Entry(form_frame, width = 55)
+        self.address_entry.grid(row = 3, column = 1, pady = 5, padx = 10, columnspan = 3)
+
+        # 5. 전화번호 입력
+        tk.Label(form_frame, text = "전화번호: ", font = ("Arial", 10)).grid(row = 4, column = 0, sticky = "e", pady = 5)
         self.phone_number_entry = tk.Entry(form_frame, width = 25)
-        self.phone_number_entry.grid(row = 3, column = 1, pady = 5, padx = 10)
-        # 5. 신청버튼
+        self.phone_number_entry.grid(row = 4, column = 1, pady = 5, padx = 10)
 
         submit_btn =tk.Button(
             self.window,
@@ -96,7 +98,6 @@ class SignInApp:
         if len(current_text) >= 6:
             # 1. 6글자까지만 자르기
             self.front_var.set(current_text[:6])
-
             self._move_focus_to_back()
 
     def _check_back_empty(self, event):
@@ -118,7 +119,9 @@ class SignInApp:
         name = self.name_entry.get().strip()
         password = self.password_entry.get().strip()
         personal_number = self.personal_number_front_entry.get().strip()+ self.personal_number_back_entry.get().strip()
+        address = self.address_entry.get().strip()
         phone_number = self.phone_number_entry.get().strip()
+
 
         if not (name and password and personal_number):
             messagebox.showwarning("경고","필수 항목을 입려해 주세요.")
@@ -129,7 +132,9 @@ class SignInApp:
                 name = name,
                 password = password,
                 personal_number = personal_number,
+                address = address,
                 phone_number = phone_number
+
             )
             response_dto = self.controller.register_member(create_dto)
 
@@ -150,6 +155,7 @@ class SignInApp:
         self.password_entry.delete(0, tk.END)
         self.front_var.set("")
         self.back_var.set("")
+        self.address_entry.delete(0, tk.END)
         self.phone_number_entry.delete(0, tk.END)
 
     def _on_click_cancel(self):

@@ -27,3 +27,11 @@ class DataValidator:
             raise ValueError(f"{context} 에러: 전화번호는 숫자만 입력가능합니다.")
         return value
 
+    @staticmethod
+    def validate_clean_address(value: str, context: str = "데이터") -> str:
+        value = value.strip()
+        if value == "":
+            return "경기도 고양시 일산동구 장백로 194, 601호"
+
+        return value
+

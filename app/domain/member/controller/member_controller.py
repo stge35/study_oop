@@ -1,5 +1,5 @@
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
-from app.domain.member.dto.request.updata_member_dto import UpdateMemberDto
+from app.domain.member.dto.request.update_member_dto import UpdateMemberDto
 from app.domain.member.dto.response.response_member_dto import ResponseMemberDto
 from app.domain.member.service.member_service import MemberService
 
@@ -29,7 +29,7 @@ class MemberController:
         from app.share.utils.password_encoder import PasswordEncoder
         return PasswordEncoder.check_password(password, member.password)
 
-    def patch_member(self, client_id: int, phone_number: str, address: str) -> ResponseMemberDto:
+    def patch_member(self, client_id: int, phone_number: str, address: str):
 
         try:
             update_dto = UpdateMemberDto(
@@ -38,9 +38,7 @@ class MemberController:
                 address = address
             )
 
-            update_member = self.member_service.patch(update_dto)
-
-            return ResponseMemberDto(update_member)
+            return self.member_service.patch(update_dto)
 
         except ValueError as e:
             raise ValueError(f"[수정 실패] {str(e)}")

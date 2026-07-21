@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4624a96-ef55-441f-8c93-2f1008608dee" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/app/domain/gui/login/search_address.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/gui/login/main_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/gui/login/main_gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/controller/member_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/repository/file_member_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/domain/member/dto/request/updata_member_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/dto/request/update_member_dto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/domain/member/service/member_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/domain/member/service/member_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/share/validation/business_exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/validation/business_exception.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/share/validation/custom_exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/share/validation/error_code.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,5 +1,5 @@
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
-from app.domain.member.dto.request.updata_member_dto import UpdateMemberDto
+from app.domain.member.dto.request.update_member_dto import UpdateMemberDto
 from app.domain.member.dto.response.response_member_dto import ResponseMemberDto
 from app.domain.member.entity.member import Member
 from app.domain.member.repository.member_interface import MemberInterface

@@ -16,9 +16,9 @@ class CreateClientDto:
                  client_id : Optional[int] = None
                  ):
 
-        self.name = DataValidator.validate_korean_name(name, context = "DTO")
+        self.name = DataValidator.validate_korean_name(name)
         self.personal_number = DataValidator.validate_numeric_string(personal_number, field_name = "주민번호", context = "DTO")
-        self.personal_number = DataValidator.validate_clean_phone(phone_number, context = "DTO")
+        self.personal_number = DataValidator.validate_clean_phone(phone_number)
         self.address = address
         self.client_id = client_id
 

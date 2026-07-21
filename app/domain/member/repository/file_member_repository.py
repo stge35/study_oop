@@ -1,3 +1,4 @@
+import copy
 import json
 import os.path
 from typing import List, Optional
@@ -37,12 +38,37 @@ class FileMemberRepository(MemberInterface):
 
     def update_member(self, member: Member) -> None:
 
-        all_members = self._read_data()
+        # 1. 파일에서 현재 영구 저장되어 있는 전체 회원 목록([{}, {}, ...])을 읽어 온다.
+        all_members: list[dict]= self._read_data()
 
-        for data in all_members:
+        # 2. 파일 목록에서 수정 대상 회원의 위치(인덱스)와 기존 딕셔너리를 찾습니다.
+        target_index: int = -1
+        existing_member_dict: Optional[dict] = None
 
+        for index, m_dict in enumerate(all_members):
+            if m_dict.get('member_id') == member.member_id:
+                target_index = index
+                existing_member_dict = m_dict
+                break
 
+        # 3. 수정할 회원이 파일 내에 없으면 예외를 던져 작업을 중단한다.
+        if target_index == -1 or existing_member_dict is None:
+            raise ValueError(f"저장소 에러: ID {member.member_id}번 회원이 존재하지 않습니다.")
 
+        # 4. [안전장치] 전달 받은 member 객체의 데이터 중 None 아닌(실제 수정된) 값만
+        #    기존 파일 데이터 (existing_member_dict)에 부분 업데이트(patch) 합니다.
+        update_member_dict = copy.deepcopy(existing_member_dict)
+
+        # member 객체에서 None이 아닌 필드만 골라내어 딕셔너리를 갱신
+        for key, value in member.__dict__.items():
+            if value is not None:
+                update_member_dict[key] = value
+
+        # 5. 기존 리스트의 해당 위치에 안전하게 가공된 딕셔너리를 교체
+        all_members[target_index] = update_member_dict
+
+        self._save_data(all_members)
+        print(f"업데이트 성공 {member.member_id}")
 
     def find_all_member(self) -> list[Member]:
 

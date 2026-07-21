@@ -1,4 +1,5 @@
 from app.domain.member.dto.request.create_member_dto import CreateMemberDto
+from app.domain.member.dto.request.updata_member_dto import UpdateMemberDto
 from app.domain.member.dto.response.response_member_dto import ResponseMemberDto
 from app.domain.member.entity.member import Member
 from app.domain.member.repository.member_interface import MemberInterface
@@ -29,6 +30,27 @@ class MemberService:
             return None
 
         return members[0]
+
+    def patch(self, dto:UpdateMemberDto) -> Member:
+        existing_member = self.repository.find_by_id(dto.member_id)
+        if not existing_member:
+            raise ValueError(f"수정 실패: ID {dto.member_id} 회원을 찾을 수 없습니다.")
+
+        patch_member = dto.phone_number if dto.phone_number is not None else existing_member.phone_number
+        address = dto.address if dto.address is not None else existing_member.address
+
+        update_member = Member(
+            name=existing_member.name,
+            password=existing_member.password,
+            personal_number=existing_member.personal_number,
+            phone_number=patch_member,
+            address = address,
+            member_id = existing_member.member_id
+        )
+
+        self.repository.update_member(update_member)
+
+        return update_member
 
     def has_any_member(self) -> bool:
 

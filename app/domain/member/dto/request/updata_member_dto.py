@@ -12,7 +12,7 @@ class UpdateMemberDto:
                  ):
         self.member_id = member_id
         if phone_number is not None:
-            self.phone_number = DataValidator.validate_clean_phone(phone_number, context = "DTO")
+            self.phone_number = DataValidator.validate_clean_phone(phone_number)
         else:
             self.phone_number = None
 

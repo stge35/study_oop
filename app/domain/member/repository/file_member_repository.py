@@ -1,6 +1,7 @@
 import copy
 import json
 import os.path
+from pathlib import Path
 from typing import List, Optional
 from app.domain.member.entity.member import Member
 from app.domain.member.repository.member_interface import MemberInterface
@@ -14,7 +15,18 @@ class FileMemberRepository(MemberInterface):
     # 초기화
 
     def __init__(self, file_path : str = "members.json"):
-        self.file_path = file_path
+
+        current_dir = Path(__file__).resolve().parent
+
+        app_dir = None
+        for path in [current_dir] + list(current_dir.parents):
+            if path.name == "app":
+                app_dir = path
+                break
+        storage_dir = app_dir / "storage"
+        storage_dir.mkdir(parents = True, exist_ok = True)
+
+        self.file_path = str(storage_dir / file_path)
 
         if not os.path.exists(self.file_path):
             self._save_data([])

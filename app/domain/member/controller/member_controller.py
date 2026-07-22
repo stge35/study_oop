@@ -24,6 +24,7 @@ class MemberController:
         member = self.member_service.login(name)
 
         if not member:
+
             raise ValueError("사용자가 존재하지 않습니다.")
 
         from app.share.utils.password_encoder import PasswordEncoder

@@ -20,7 +20,7 @@ class CreateMemberDto:
         self.personal_number = DataValidator.validate_numeric_string(personal_number, field_name = "주민번호", context = "DTO")
         self.phone_number = DataValidator.validate_clean_phone(phone_number)
         self.password = password
-        self.address = DataValidator.validate_clean_address(address, context = "DTO")
+        self.address = DataValidator.validate_clean_address(address)
         self.member_id = member_id
 
 

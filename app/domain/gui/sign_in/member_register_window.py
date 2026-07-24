@@ -3,17 +3,18 @@ from PySide6.QtWidgets import (
     QLabel, QPushButton, QWidget, QMessageBox)
 from PySide6.QtCore import Qt
 
-from app.domain.gui.login.person_info_form_widget import PersonInFoFormWidget
+from app.domain.gui.sign_in.person_info_form_widget import PersonInFoFormWidget
 from app.domain.member.controller.member_controller import MemberController
+from app.share.API.address_info_api.controller.address_controller import AddressController
 
 
 class MemberRegisterWindow(QMainWindow):
 
-    def __init__(self, controller: MemberController):
+    def __init__(self, controller: MemberController, address_controller: AddressController):
         super().__init__()
 
         self.member_controller = controller
-
+        self.address_controller = address_controller
         self.setWindowTitle("최명진 법무사 사무소 - 직원 등록")
         self.setFixedSize(580, 420)
 
@@ -33,7 +34,7 @@ class MemberRegisterWindow(QMainWindow):
 
         # 2. component recycle
 
-        self.form_widget = PersonInFoFormWidget(self)
+        self.form_widget = PersonInFoFormWidget(controller = self.address_controller, parent = self)
         # self.form_widget.pw_entry.hide()
 
         main_layout.addWidget(self.form_widget)
@@ -59,7 +60,7 @@ class MemberRegisterWindow(QMainWindow):
 
     def _on_click_save_data(self):
         data = self.form_widget.get_form_data()
-        if not data.name and data.personal_number:
+        if not data.name or data.personal_number:
             QMessageBox.warning(self, "경고", "이름과 주민번호는 필수 입력 항목입니다.")
             return
 

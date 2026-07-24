@@ -1,2 +1,0 @@
-class AddressRequest:
-    pass

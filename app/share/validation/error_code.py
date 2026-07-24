@@ -13,6 +13,8 @@ class ErrorCode(Enum):
     MEMBER_NOT_FOUND = ("M100", "회원이 존재 하지 않습니다.")
     DUPLICATE_MEMBER = ("M101", "이미 존재 하는 회원 입니다.")
 
+    ADDRESS_ERROR = ("A001", "주소 에러")
+
     def __init__(self, code: str, message: str):
         self.code = code
         self.message = message
